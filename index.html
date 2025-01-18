@@ -13,12 +13,34 @@
 <body>
     
     <header class="header">
-            <h1>Find your film</h1>
-            <h2>My Watchlist</h2>
+        <h1 class="find-movie" id="find-movie" tabindex="0">Find your film</h1>
+        <h2 class="watchlist" id="watchlist" tabindex="0">My Watchlist</h2>
     </header>
-
+    
     <main class="main">
-        <p>hello</p>
+        <form class="search-form" id="search-form">
+            <input type="text" placeholder="search for a movie" class="search-input" id="search-input" aria-label="Search for a movie"/>
+            <button type="submit" class="search-btn" id="search" tabindex="0">Search</button>
+        </form>
+        <div id="main-content">
+            <article class="movie-article">
+                <img src="https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_SX300.jpg" alt="Poster for movie"/>
+                <div class="movie-info">
+                    <div class="movie-top">
+                        <h3>Avatar</h3>
+                        <p> <span class="star">&#9733</span> 3.5</p>
+                    </div>
+                    <div class="movie-mid">
+                        <p>162 min</p>
+                        <p>Action, Adventure, Fantasy</p>
+                        <p><button type="submit" aria-label="Add to watchlist">+</button> Add to Watchlist</p>
+                    </div>
+                    <div class="movie-bottom">
+                        <p>A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.</p>
+                    </div>
+                </div>
+                </article>
+            </div>
     </main>
 
     <script src="script.js" type="module"></script>
