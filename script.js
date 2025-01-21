@@ -27,7 +27,20 @@ function searchMovies(title) {
 function showMovies(movie) {
     mainContent.innerHTML = `
     <article class="movie-article">
-    <img />
-    <h3>${movie.Title}</h3>
-    </article>`
+                <img src="${movie.Poster}" alt="Poster for movie"/>
+                <div class="movie-info">
+                    <div class="movie-top">
+                        <h3>${movie.Title}</h3>
+                        <p> <span class="star">&#9733</span> ${movie.Ratings[0].Value}</p>
+                    </div>
+                    <div class="movie-mid">
+                        <p>${movie.Runtime}</p>
+                        <p>${movie.Genre}</p>
+                        <p><button type="submit" aria-label="Add to watchlist">+</button> Add to Watchlist</p>
+                    </div>
+                    <div class="movie-bottom">
+                        <p>${movie.Plot}</p>
+                    </div>
+                </div>
+            </article>`
 }
