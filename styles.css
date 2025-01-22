@@ -22,7 +22,6 @@ body {
     padding: 5em;
     height: 30vh;
     min-height: 300px;
-    width: 100%;
     min-width: inherit;
     color: var(--header-text-color);
     background-image: url(/images/header-img.png);
@@ -71,11 +70,18 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    min-height: 70vh;
+    
     padding: .3em;
     margin: 0;
     min-width: inherit;
     max-width: 100%;
+
+    h2 {
+        text-align: center;
+        text-decoration: underline;
+        font-size: 3rem;
+    }
+
     .search-form {
         display: flex;
         max-width: 100%;
@@ -103,16 +109,23 @@ body {
     
     .movie-article {
         display: flex;
-        padding-bottom: 10px;
+        padding: 2em;
         width: 90%;
-        margin: 0 auto;
+        margin: 5px auto;
         border-bottom: 3px solid #E5E7EB;
-        flex-wrap: 1;
+        
 
-        img {
-            height: 200px;
-            padding-right: 1em;
-            align-self: center;
+        .photo-container {
+            min-width: 100px;
+            max-width: 20%;
+            display: flex;
+            align-content: center;
+            img {
+                align-self: center;
+                min-height: 150px;
+                padding-right: 1em;
+                max-width: 100%;
+            }   
         }
 
         .movie-info {
@@ -122,7 +135,6 @@ body {
         .movie-top {
             display: flex;
             align-items: top;
-            flex-direction: row;
             gap: 10px;
             align-items: center;
             
@@ -143,7 +155,7 @@ body {
             font-size: .8em;
             align-items: center;
             height: 10px;
-            flex-wrap: 1;
+            
             margin-bottom: 30px;
             }
 
@@ -153,10 +165,22 @@ body {
     }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 370px) {
     .header  {
         h1, h2 {
         font-size: .9rem;
+        }
+    }
+
+    .movie-top {
+        h3 {
+            font-size: 1rem;
+        }
+    }
+
+    .movie-mid {
+        p {
+            font-size: .7rem;
         }
     }
 }
@@ -165,8 +189,8 @@ body {
     .header {
         h1 {
             font-size: 1.7em;
-    }
-} 
+        }
+    } 
 }
 
 @media only screen and (min-width: 600px) {
@@ -184,22 +208,15 @@ body {
 }
 
 @media only screen and (min-width: 900px) {
-    
     .header {
         background-position-y: 30%;
         display: flex;
         justify-content: space-around;
-
-        h2 {
-            transform: translateY(0);
-        }
     }
 }
 
 @media only screen and (min-width: 1200px) {
     body {
-        display: flex;
-        flex-direction: column;
         margin: 0 auto;
         max-width: 1400px;
         background-color: black;
@@ -208,7 +225,11 @@ body {
     .header {
         max-width: inherit;
         background-size: 100% auto;
-        
     }    
+
+    .main {
+        height: auto;
+        min-height: 70vh;
+    }
 }
 
