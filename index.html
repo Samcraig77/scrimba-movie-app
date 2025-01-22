@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Font imports -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <title>API Supported Movie App</title>
-</head>
-<body>
-    
-    <header class="header">
-        <h1 class="find-movie" id="find-movie" tabindex="0">Find your film</h1>
-        <h2 class="watchlist" id="watchlist" tabindex="0">My Watchlist</h2>
-    </header>
-    
-    <main class="main">
-        <form class="search-form" id="search-form">
-            <input type="text" placeholder="search for a movie" class="search-input" id="search-input" aria-label="Search for a movie"/>
-            <button type="submit" class="search-btn" id="search" tabindex="0">Search</button>
-        </form>
-        <div id="main-content">
-            
-        </div>
-    </main>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <!-- Google Font imports -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <title>API Supported Movie App</title>
+    </head>
+    <body>
+        
+        <header class="header">
+            <h1 class="find-movie" id="find-movie" tabindex="0">Find your film</h1>
+            <h2 class="watchlist" id="watchlist" tabindex="0"><a href="watchlist.html">My Watchlist</a></h2>
+        </header>
+        
+        <main class="main">
+            <form class="search-form" id="search-form">
+                <input type="text" placeholder="search for a movie" class="search-input" id="search-input" aria-label="Search for a movie"/>
+                <button type="submit" class="search-btn" id="search" tabindex="0">Search</button>
+            </form> 
+            <div id="main-content">
+                <!-- searchMovies() calls showMovies() and populates results here -->
+            </div>
+        </main>
 
-    <script src="script.js" type="module"></script>
-</body>
+        <script src="/JS/script.js" type="module"></script>
+    </body>
 </html>

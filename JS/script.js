@@ -31,7 +31,8 @@ function searchMovies(title) {
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        data.Response === "False" ? mainContent.innerText = `Unable to find what you're looking for. Please try another search` : mainContent.innerHTML = showMovies(data.Search)
+        data.Response === "False" ? mainContent.innerText = `Unable to find what you're looking for. Please try another search`
+        : mainContent.innerHTML = showMovies(data.Search)
 
         console.log(showMovies(data.Search))
     })
@@ -52,7 +53,9 @@ function showMovies(arr) {
                 </div>
 
                 <div class="movie-mid">
-                    <p><button type="submit" class="add-btn" data-imdbid="${entry.imdbID}" aria-label="Add to watchlist">+</button> Add to Watchlist</p>
+                    <p>
+                        <button type="submit" class="add-btn" data-imdbid="${entry.imdbID}" aria-label="Add to watchlist">+</button> Add to Watchlist
+                    </p>
                 </div>
 
                 <div class="movie-bottom">
@@ -79,4 +82,3 @@ function handleMoviePoster(poster) {
     poster === 'N/A' ? poster = '/images/placeholder-movie-poster.jpg' : ''
 
     return poster
-}
