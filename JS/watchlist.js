@@ -1,9 +1,9 @@
 const movies = Object.entries(JSON.parse(localStorage.getItem("movies")))
-const watchlistArray = [...Array.from(movies)]
+const watchlistArray = [...movies]
 
 const mainContent = document.getElementById('main-content')
 
-mainContent.innerHTML = renderStuff(watchlistArray)
+mainContent.innerHTML = renderWatchlist(watchlistArray)
 
 function renderWatchlist(arr) {
     let watchlist = ''
