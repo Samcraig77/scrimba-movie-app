@@ -51,7 +51,7 @@ function searchMovies(title) {
     .then(res => res.json())
     .then(data => {
         data.Response === "False" ? mainContent.innerText = `Unable to find what you're looking for. Please try another search`
-        : mainContent.innerHTML = showMovies(data.Search).join('')
+        : mainContent.innerHTML = showMovies(data.Search)
     })
     .catch(err => console.error(err))
 }
@@ -78,12 +78,12 @@ function showMovies(arr) {
                 </div>
 
             </div>
-        </article>`)
+        </article>`).join('')
 }
 
 function addBtnHandler(id) {
     let currentWatchlist = getCurrentWatchlist()
-    const movieId = currentWatchlist.find(movie => movie.id == id)
+    const movieId = currentWatchlist.find(movie => movie.id.imdbID == id)
     if (movieId) {
         return `
         <p>
@@ -112,3 +112,5 @@ function handleMoviePoster(poster) {
 
     return poster
 }
+
+console.log(getCurrentWatchlist()[0].id.imdbID)
