@@ -56,7 +56,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    
     padding: .3em;
     margin: 0;
     min-width: inherit;
@@ -100,10 +99,11 @@ body {
         margin: 5px auto;
         border-bottom: 3px solid #E5E7EB;
 
+
         .photo-container {
+            display: flex; 
             min-width: 100px;
             max-width: 20%;
-            display: flex;
             align-content: center;
 
             img {
@@ -115,32 +115,31 @@ body {
         }
 
         .movie-info {
-            display: block;
-        }
-        
-        .movie-top {
-            display: flex;
-            align-items: top;
-            gap: 10px;
-            align-items: center;
+            .movie-top {
+                display: flex;
+                align-items: top;
+                gap: 10px;
+                align-items: center;
 
-            h3 {
-                font-weight: 500;
+                h3 {
+                    font-weight: 500;
+                }
+
+                .star {
+                    color: rgb(250, 195, 15);
+                }
             }
 
-            .star {
-                color: rgb(245, 188, 2);
+            .movie-mid {
+                display: flex;
+                text-align: center;
+                gap: 10px;
+                font-size: .8em;
+                align-items: center;
+                height: 10px;
+                margin-bottom: 30px;
+                min-width: 100%;
             }
-        }
-
-        .movie-mid {
-            display: flex;
-            text-align: center;
-            gap: 10px;
-            font-size: .8em;
-            align-items: center;
-            height: 10px;
-            margin-bottom: 30px;
         }
     }
 }
