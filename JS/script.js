@@ -1,15 +1,12 @@
-// Open movie db API key = 7da6d9bf 
-
-
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const searchBtn = document.getElementById('search-btn')
 const mainContent = document.getElementById('main-content')
 const addBtnArray = document.querySelectorAll('.add-btn')
-// var existingMovies = JSON.parse(localStorage.getItem("movies"))
+
 document.addEventListener('click', e => {
     [...e.target.classList] == 'info-btn' ? getPlot(e.target.dataset.imdbid, e.target.parentElement) :
-    [...e.target.classList] == 'add-btn' ? addMovieToLocalStorage(e.target.dataset.imdbid) : ''
+    [...e.target.classList] == 'add-btn' ? getMovieInfo(e.target.dataset.imdbid) : ''
 })
 
 searchForm.addEventListener('submit', function() {
@@ -24,10 +21,23 @@ searchForm.addEventListener('input', e =>
 function addMovieToLocalStorage(id) {
     let currentWatchlist = getCurrentWatchlist()
     const movieObject = {"id": `${id}`}
+    console.log(movieObject)
     currentWatchlist.push(movieObject)
     currentWatchlist = JSON.stringify(currentWatchlist)
     localStorage.setItem("movies" , currentWatchlist)
     console.log(JSON.parse(localStorage.getItem("movies")))
+}
+
+function getMovieInfo(id) {
+    fetch(`http://www.omdbapi.com/?apikey=7da6d9bf&i=${id}`)
+    .then(res => res.json())
+    .then(data => {
+        let currentWatchlist = getCurrentWatchlist()
+        const movieObject = {"id": data}
+        currentWatchlist.push(movieObject)
+        currentWatchlist = JSON.stringify(currentWatchlist)
+        localStorage.setItem("movies" , currentWatchlist)
+    })
 }
 
 function getCurrentWatchlist() {
@@ -41,7 +51,7 @@ function searchMovies(title) {
     .then(res => res.json())
     .then(data => {
         data.Response === "False" ? mainContent.innerText = `Unable to find what you're looking for. Please try another search`
-        : mainContent.innerHTML = showMovies(data.Search)
+        : mainContent.innerHTML = showMovies(data.Search).join('')
     })
     .catch(err => console.error(err))
 }
@@ -68,7 +78,7 @@ function showMovies(arr) {
                 </div>
 
             </div>
-        </article>`).join('')
+        </article>`)
 }
 
 function addBtnHandler(id) {
@@ -96,10 +106,6 @@ function getPlot(id, parent) {
        parent.innerText = data.Plot
     })
 }
-
-// function displayMovieArray() {
-//     console.log(userMovieArray)
-// }
 
 function handleMoviePoster(poster) {
     poster === 'N/A' ? poster = '/images/placeholder-movie-poster.jpg' : ''
