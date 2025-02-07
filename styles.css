@@ -36,14 +36,13 @@ body {
         font-weight: 700;
         padding: 40px 0;
         margin: 0;
-        &:hover, &:focus {
+        /* &:hover, &:focus {
             font-weight: 900;
             color: black;
             text-shadow: 1px 1px 5px white ;
             background-repeat: no-repeat;
             background-position: center;
-
-        }
+        } */
     }
 
     h2 {
