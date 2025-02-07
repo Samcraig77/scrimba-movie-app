@@ -1,3 +1,5 @@
+//
+
 const searchForm = document.getElementById('search-form')
 const searchInput = document.getElementById('search-input')
 const searchBtn = document.getElementById('search-btn')
@@ -29,7 +31,7 @@ function addMovieToLocalStorage(id) {
 }
 
 function getMovieInfo(id) {
-    fetch(`http://www.omdbapi.com/?apikey=7da6d9bf&i=${id}`)
+    fetch(`https://www.omdbapi.com/?apikey=7da6d9bf&i=${id}`)
     .then(res => res.json())
     .then(data => {
         let currentWatchlist = getCurrentWatchlist()
@@ -47,7 +49,7 @@ function getCurrentWatchlist() {
 }
 
 function searchMovies(title) {
-    fetch (`http://www.omdbapi.com/?apikey=7da6d9bf&s=${title}`)
+    fetch (`https://www.omdbapi.com/?apikey=7da6d9bf&s=${title}`)
     .then(res => res.json())
     .then(data => {
         data.Response === "False" ? mainContent.innerText = `Unable to find what you're looking for. Please try another search`
@@ -100,7 +102,7 @@ function addBtnHandler(id) {
 }
 
 function getPlot(id, parent) {
-     fetch(`http://www.omdbapi.com/?apikey=7da6d9bf&i=${id}`)
+     fetch(`https://www.omdbapi.com/?apikey=7da6d9bf&i=${id}`)
     .then(res => res.json())
     .then(data => {
        parent.innerText = data.Plot
